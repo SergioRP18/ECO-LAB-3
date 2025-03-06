@@ -20,6 +20,10 @@ function determineWinner(player1, player2) {
     return result;
 }
 
+app.get("/", (req, res) => {
+    res.send("¡Bienvenido al servidor de Piedra, Papel o Tijera!");
+});
+
 app.post("/user", (request, response) => {
     const { body } = request;
     db.players.push(body);

@@ -1,4 +1,5 @@
-document.getElementById("player-form").addEventListener("submit", submitMove);
+let count = 60;
+const timerElement = document.getElementById("timer");
 
 const timer = setInterval(function() {
   count--;
@@ -9,6 +10,9 @@ const timer = setInterval(function() {
       document.getElementById("player-form").querySelector("button").disabled = true;
   }
 }, 1000);
+
+document.getElementById("player-form").addEventListener("submit", submitMove);
+
 async function submitMove(event) {
     event.preventDefault();
     const name = document.getElementById("player-name").value;
@@ -32,7 +36,4 @@ async function submitMove(event) {
     } catch (error) {
         console.error(error);
     }
-    let count = 60;
-const timerElement = document.getElementById("timer");
-
 }
